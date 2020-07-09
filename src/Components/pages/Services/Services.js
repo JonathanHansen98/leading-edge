@@ -3,12 +3,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import Card from "./ImgCard";
 import { Header, StyledP } from "../../../Elements/Elements";
 import { useAnimation, motion } from "framer-motion";
-import Sheets from "../../../images/drywall-sheets.jpeg";
-import Popcorn from "../../../images/popcorn.jpeg";
-import Patches from "../../../images/patches.jpg";
-import Texture from "../../../images/texture.jpeg";
-import Painting from "../../../images/painting.jpeg";
-import Commercial from "../../../images/commercial.jpeg";
+import Sheets from "../../../images/drywall-sheets-min.jpeg";
+import Popcorn from "../../../images/popcorn-min.jpeg";
+import Patches from "../../../images/patches-min.jpg";
+import Texture from "../../../images/texture-min.jpeg";
+import Painting from "../../../images/painting-min.jpeg";
+import Commercial from "../../../images/commercial-min.jpeg";
 
 const Services = () => {
   const hControls = useAnimation();
