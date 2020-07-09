@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledCard, CardBottom, CyanButton } from "../../../Elements/Elements";
-import { Row, Col, Card } from "react-bootstrap";
+import { CyanButton } from "../../../Elements/Elements";
+import { Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 
 const ImgCard = ({ img, text, animate, delay }) => {
