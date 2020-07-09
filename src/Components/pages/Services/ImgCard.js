@@ -34,7 +34,7 @@ const ImgCard = ({ img, text, animate, delay }) => {
 
   return (
     <Col className="m-3" md={5}>
-      <motion.div variants={variants} animate={animate} transition={{delay: delay}} initial='closed' >
+      <motion.div className='d-flex justify-content-center' variants={variants} animate={animate} transition={{delay: delay}} initial='closed' >
         <Card style={{ width: "15rem", border: "none" }}>
           <Card.Img style={styles.minHeight} variant="top" src={img} />
           <div style={{ backgroundColor: "var(--le-lightgrey)" }}>

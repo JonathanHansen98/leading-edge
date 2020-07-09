@@ -1,15 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Card from "./ImgCard";
-import {Header, StyledP} from '../../../Elements/Elements';
-import { useAnimation } from "framer-motion";
-import Sheets from '../../../images/drywall-sheets.jpeg'
-import Hand from '../../../images/hand.jpeg'
-import Patches from '../../../images/patches.jpg'
-import Texture from '../../../images/texture.jpeg'
-import Painting from '../../../images/painting.jpeg'
-import Commercial from '../../../images/commercial.jpeg'
-
+import { Header, StyledP } from "../../../Elements/Elements";
+import { useAnimation, motion } from "framer-motion";
+import Sheets from "../../../images/drywall-sheets.jpeg";
+import Popcorn from "../../../images/popcorn.jpeg";
+import Patches from "../../../images/patches.jpg";
+import Texture from "../../../images/texture.jpeg";
+import Painting from "../../../images/painting.jpeg";
+import Commercial from "../../../images/commercial.jpeg";
 
 const Services = () => {
   const hControls = useAnimation();
@@ -24,20 +23,20 @@ const Services = () => {
   sequence();
   const services = [
     {
-      text: "test",
-      img: Sheets,
-    },
-    {
-      text: "test",
-      img: Hand,
-    },
-    {
       text: "Patch Repair",
       img: Patches,
     },
     {
+      text: "Popcorn Removal",
+      img: Popcorn,
+    },
+    {
       text: "Texturing",
       img: Texture,
+    },
+    {
+      text: "Small Remodels",
+      img: Sheets,
     },
     {
       text: "Commercial Services",
@@ -69,13 +68,13 @@ const Services = () => {
   return (
     <Container>
       <Row>
-        <Col className='py-5' lg={6}>
+        <Col className="py-5" lg={6}>
           <Row>
             <Col>
               <Header
-               variants={variants}
-               initial="closed"
-               animate={hControls}
+                variants={variants}
+                initial="closed"
+                animate={hControls}
                 className=" p-2 pt-md-5 d-inline-block"
               >
                 Our Services
@@ -84,23 +83,36 @@ const Services = () => {
           </Row>
           <Row>
             <Col>
-              <StyledP
-               variants={variants}
-               initial="closed"
-               animate={pControls}
+              <motion.div
+                variants={variants}
+                initial="closed"
+                animate={pControls}
                 className="my-md-5"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                nulla accusantium, natus labore omnis nesciunt non in culpa
-                fugit magni ipsam quasi temporibus, a dolorum.
-              </StyledP>
+                <StyledP>
+                  At Leading Edge every job is important and we believe that the
+                  extra level of care put into our work demonstrates our
+                  commitment to quality and value.
+                </StyledP>
+                <StyledP>
+                  Based out of Phoenix, AZ, Leading Edge Drywall’s general area
+                  of operation includes a 200 mile radius encompassing the
+                  entire valley.
+                </StyledP>
+              </motion.div>
             </Col>
           </Row>
         </Col>
         <Col lg={6}>
           <Row className="py-5">
             {services.map((img, i) => (
-              <Card key={i} img={img.img} text={img.text} animate={cbControls} delay={i * .3} />
+              <Card
+                key={i}
+                img={img.img}
+                text={img.text}
+                animate={cbControls}
+                delay={i * 0.3}
+              />
             ))}
           </Row>
         </Col>

@@ -3,5 +3,5 @@
 }
 
 .modal-title {
-  color: white;
+  color: var(--le-cyan);
 }

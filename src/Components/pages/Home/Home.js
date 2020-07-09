@@ -78,9 +78,7 @@ const Home = () => {
                 animate={pControls}
                 className="my-md-5"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                nulla accusantium, natus labore omnis nesciunt non in culpa
-                fugit magni ipsam quasi temporibus, a dolorum.
+                As a leading specialty contractor in the Phoenix area, our company offers only the finest craftsmanship and materials available today. Our talented and experienced drywall crew is skilled in the most up-to-date drywall textures and finishes.
               </StyledP>
             </Col>
           </Row>

@@ -1,29 +1,29 @@
 import React from "react";
-import { Navbar, Nav, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Logo from '../images/logo-square.png'
+import { Navbar, Nav } from "react-bootstrap";
+import Logo from "../images/logo-square.png";
+import './Nav.css'
 
 const TopBar = () => {
   return (
-    <Navbar style={{ backgroundColor: "var(--le-lightgrey)" }}>
-      <Col xs={6}>
-        <Navbar.Brand  style={{ color: "var(--le-cyan)" }}><span><img className='mr-3' height='35px' src={Logo} alt=""/></span>Leading Edge</Navbar.Brand>
-      </Col>
-      <Col xs={6}>
-        <Nav>
-          <div className="d-flex w-100 justify-content-around">
-            <Link style={{ color: "var(--le-cyan)" }} to="/">
-              <li>Home</li>
-            </Link>
-            <Link style={{ color: "var(--le-cyan)" }} to="/services">
-              <li>Services</li>
-            </Link>
-            <Link style={{ color: "var(--le-cyan)" }} to="/contact">
-              <li>Contact</li>
-            </Link>
-          </div>
-        </Nav>
-      </Col>
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      style={{ backgroundColor: "var(--le-lightgrey)" }}
+    >
+        <Navbar.Brand style={{ color: "var(--le-cyan)" }}>
+          <span>
+            <img className="mr-3" height="35px" src={Logo} alt="" />
+          </span>
+          Leading Edge
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse  id="responsive-navbar-nav">
+          <Nav>
+              <Nav.Link className='mx-5' style={{ color: "var(--le-cyan)" }} href="/">Home</Nav.Link>
+              <Nav.Link className='mx-5' style={{ color: "var(--le-cyan)" }} href="/services">Services</Nav.Link>
+              <Nav.Link className='mx-5' style={{ color: "var(--le-cyan)" }} href="/contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
     </Navbar>
   );
 };

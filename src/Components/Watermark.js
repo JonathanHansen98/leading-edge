@@ -13,7 +13,7 @@ const Watermark = () => {
     }
   };
   return (
-    <svg style={styles.svg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.77 768.05">
+    <svg className='d-none d-lg-inline' style={styles.svg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.77 768.05">
       <g id="Layer_1-2" data-name="Layer 1">
         <rect style={styles.rect} width="82.69" height="324.89" />
         <rect
