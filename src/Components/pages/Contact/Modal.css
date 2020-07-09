@@ -1,0 +1,7 @@
+.modal-content {
+  background-color: var(--le-darkgrey);
+}
+
+.modal-title {
+  color: white;
+}

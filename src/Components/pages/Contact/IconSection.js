@@ -13,15 +13,15 @@ import {
 const icons = [
   {
     icon: faEnvelope,
-    text: "Lorem ipsum dolor",
+    text: "leadingedgedrywall@gmail.com",
   },
   {
     icon: faPhone,
-    text: "Lorem ipsum dolor",
+    text: "480.343.6728",
   },
   {
     icon: faMapMarker,
-    text: "Lorem ipsum dolor",
+    text: "Phoenix, Arizona",
   },
 ];
 const IconSection = ({ animate }) => {

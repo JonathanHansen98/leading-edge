@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import { CyanButton } from "../../../Elements/Elements";
 import { Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import ContactModal from '../Contact/ContactModal'
 
 const ImgCard = ({ img, text, animate, delay }) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const variants = {
     open: {
       x: 0,
@@ -19,11 +26,17 @@ const ImgCard = ({ img, text, animate, delay }) => {
     }
   }
 
+ const styles = {
+   minHeight : {
+     minHeight: '160px'
+   }
+ }
+
   return (
     <Col className="m-3" md={5}>
       <motion.div variants={variants} animate={animate} transition={{delay: delay}} initial='closed' >
         <Card style={{ width: "15rem", border: "none" }}>
-          <Card.Img variant="top" src={img} />
+          <Card.Img style={styles.minHeight} variant="top" src={img} />
           <div style={{ backgroundColor: "var(--le-lightgrey)" }}>
             <div className="d-inline-flex align-items-center">
               <p
@@ -33,7 +46,8 @@ const ImgCard = ({ img, text, animate, delay }) => {
                 {text}
               </p>
             </div>
-            <CyanButton className="float-right">Somethin</CyanButton>
+            <CyanButton onClick={handleShow} className="float-right px-2"><FontAwesomeIcon icon={faEnvelope} /> </CyanButton>
+            <ContactModal show={show} handleClose={handleClose} />
           </div>
         </Card>
       </motion.div>

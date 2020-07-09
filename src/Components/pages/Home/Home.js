@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   Header,
@@ -8,6 +8,7 @@ import {
 } from "../../../Elements/Elements";
 import Logo from "./LogoSVG";
 import { useAnimation } from "framer-motion";
+import ContactModal from '../Contact/ContactModal'
 
 const Home = () => {
   const hControls = useAnimation();
@@ -15,6 +16,11 @@ const Home = () => {
   const bControls = useAnimation();
   const cbControls = useAnimation();
   const logoContols = useAnimation();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const sequence = async () => {
     await hControls.start("open");
@@ -38,7 +44,7 @@ const Home = () => {
   const variants = {
     closed: {
       x: 200,
-      opacity: 0
+      opacity: 0,
     },
     open: {
       x: 0,
@@ -81,6 +87,7 @@ const Home = () => {
           <Row className="mt-md-5">
             <Col className="d-inline-flex justify-content-end">
               <CyanButton
+                onClick={handleShow}
                 variants={variants}
                 initial="closed"
                 animate={bControls}
@@ -88,18 +95,24 @@ const Home = () => {
               >
                 Request a Quote
               </CyanButton>
-              <ClearButton
-                variants={variants}
-                initial="closed"
-                animate={cbControls}
-                className="mx-3"
-              >
-                Our Services
-              </ClearButton>
+                <ContactModal show={show} handleClose={handleClose} />
+              <a href="/services">
+                <ClearButton
+                  variants={variants}
+                  initial="closed"
+                  animate={cbControls}
+                  className="mx-3"
+                >
+                  Our Services
+                </ClearButton>
+              </a>
             </Col>
           </Row>
         </Col>
-        <Col className="d-inline-flex align-items-center px-5 order-1 order-md-2" md={6}>
+        <Col
+          className="d-inline-flex align-items-center px-5 order-1 order-md-2"
+          md={6}
+        >
           <Logo
             variants={logoVariants}
             initial="closed"

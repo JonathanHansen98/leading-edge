@@ -3,6 +3,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import Card from "./ImgCard";
 import {Header, StyledP} from '../../../Elements/Elements';
 import { useAnimation } from "framer-motion";
+import Sheets from '../../../images/drywall-sheets.jpeg'
+import Hand from '../../../images/hand.jpeg'
+import Patches from '../../../images/patches.jpg'
+import Texture from '../../../images/texture.jpeg'
+import Painting from '../../../images/painting.jpeg'
+import Commercial from '../../../images/commercial.jpeg'
 
 
 const Services = () => {
@@ -19,33 +25,27 @@ const Services = () => {
   const services = [
     {
       text: "test",
-      img:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F7n6cpvIFdfY%2Fmaxresdefault.jpg&f=1&nofb=1",
+      img: Sheets,
     },
     {
       text: "test",
-      img:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F7n6cpvIFdfY%2Fmaxresdefault.jpg&f=1&nofb=1",
+      img: Hand,
     },
     {
-      text: "test",
-      img:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F7n6cpvIFdfY%2Fmaxresdefault.jpg&f=1&nofb=1",
+      text: "Patch Repair",
+      img: Patches,
     },
     {
-      text: "test",
-      img:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F7n6cpvIFdfY%2Fmaxresdefault.jpg&f=1&nofb=1",
+      text: "Texturing",
+      img: Texture,
     },
     {
-      text: "test",
-      img:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F7n6cpvIFdfY%2Fmaxresdefault.jpg&f=1&nofb=1",
+      text: "Commercial Services",
+      img: Commercial,
     },
     {
-      text: "test",
-      img:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F7n6cpvIFdfY%2Fmaxresdefault.jpg&f=1&nofb=1",
+      text: "Painting",
+      img: Painting,
     },
   ];
   const variants = {
