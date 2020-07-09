@@ -1,15 +1,13 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import {
   faEnvelope,
   faPhone,
-  faMapMarker,
-  faMap,
+  faMapMarker
 } from "@fortawesome/free-solid-svg-icons";
-let delay = 0;
 
 
 const icons = [

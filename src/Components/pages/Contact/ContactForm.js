@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Form, Row } from "react-bootstrap";
-import { CyanButton, Header } from "../../../Elements/Elements";
+import { CyanButton } from "../../../Elements/Elements";
 
 
 const ContactForm = () => {
