@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { CyanButton } from "../../../Elements/Elements";
 
 
-
 const ContactForm = () => {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  })
+  
+  const onInputChange = e => {
+    const { name, value } = e.target
+    setFormState({ ...formState, [name]: value, })
+  }
+
   return (
     <div>
       <input type="hidden" name="bot-field" />
@@ -19,18 +31,15 @@ const ContactForm = () => {
         <input type="hidden" name="form-name" value="contact" />
         <Row>
           <Col>
-            <Form.Label>First Name</Form.Label>
-            <Form.Control type="input" placeholder="John" name="first_name" />
-          </Col>
-          <Col>
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control type="input" placeholder="Smith" name="last_name" />
+            <Form.Label>Name</Form.Label>
+            <Form.Control onChange={onInputChange} type="input" placeholder="John" name="name" value={formState.name} />
           </Col>
         </Row>
         <Row>
           <Col>
             <Form.Label>Email Address</Form.Label>
-            <Form.Control
+            <Form.Control onChange={onInputChange}
+              value={formState.email}
               type="email"
               placeholder="johnsmith@somewhere.com"
               name="email"
@@ -40,7 +49,7 @@ const ContactForm = () => {
         <Row>
           <Col>
             <Form.Label>Phone Number</Form.Label>
-            <Form.Control
+            <Form.Control value={formState.phone} onChange={onInputChange}
               type="input"
               placeholder="123-456-7890"
               name="phone"
@@ -51,7 +60,7 @@ const ContactForm = () => {
           <Col>
             <Form.Group controlId="subject">
               <Form.Label>Subject</Form.Label>
-              <Form.Control as="select" name="subject">
+              <Form.Control value={formState.subject} onChange={onInputChange} as="select" name="subject">
                 <option>Quote</option>
                 <option>Set up appointment</option>
                 <option>Question</option>
@@ -64,13 +73,13 @@ const ContactForm = () => {
           <Col>
             <Form.Group controlId="message">
               <Form.Label>Message:</Form.Label>
-              <Form.Control as="textarea" rows="5" name="message" />
+              <Form.Control value={formState.message} onChange={onInputChange} as="textarea" rows="5" name="message" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col>
-            <CyanButton className="float-right" type="submit">
+            <CyanButton disabled={formState.name.trim() === '' || formState.phone.trim() === '' || formState.message.trim() === '' } className="float-right" type="submit">
               Submit
             </CyanButton>
           </Col>
